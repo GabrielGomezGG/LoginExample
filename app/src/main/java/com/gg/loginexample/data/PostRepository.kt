@@ -17,7 +17,7 @@ class PostRepositoryImpl @Inject constructor(
     override suspend fun getPosts(): List<Post> {
         val posts = postService.getPostsNetwork()
 
-        if(posts.code() == 404 && !posts.isSuccessful)
+        if(!posts.isSuccessful)
             throw PostNotFoundException()
 
         if(posts.isSuccessful)

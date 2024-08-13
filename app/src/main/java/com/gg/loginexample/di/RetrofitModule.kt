@@ -3,6 +3,7 @@ package com.gg.loginexample.di
 import com.gg.loginexample.data.PostRepository
 import com.gg.loginexample.data.PostRepositoryImpl
 import com.gg.loginexample.data.network.PostService
+import com.gg.loginexample.domain.model.GetPostUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -38,6 +39,14 @@ class RetrofitModule {
         postService: PostService
     ): PostRepository {
         return PostRepositoryImpl(postService)
+    }
+
+    @Singleton
+    @Provides
+    fun provideGetPostUseCase(
+        postRepository: PostRepository
+    ): GetPostUseCase {
+        return GetPostUseCase(postRepository)
     }
 
 }
