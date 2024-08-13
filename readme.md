@@ -1,15 +1,16 @@
-- Dagger Hilt !!
-- Retrofit !!
-- Coroutines !!
-- Navigation Component
-- View Model !!
-- Flow !!
+- Dagger Hilt !! ✔
+- Retrofit !! ✔
+- UiState !!
+- Coroutines !! ✔
+- Use Cases !! 
+- Navigation Component 
+- View Model !! ✔
+- Flow !! ✔
 - Room?
 - Apollo GraphQL?
-- Use Cases
-- Repository Pattern !! 
-- Clean Architecture !!
-- Compose !!
+- Repository Pattern !! ✔ 
+- Clean Architecture !! ✔
+- Compose !! ✔
 - Animaciones?
 - Testing!! (Mockk, JUnit)
 - CI/CD????????????

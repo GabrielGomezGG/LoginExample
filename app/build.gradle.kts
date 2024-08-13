@@ -71,12 +71,12 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-
-
-
-
     //Dagger Hilt
     ksp(libs.hilt.android.compiler)
     implementation(libs.hilt.android)
     implementation(libs.androidx.hilt.navigation.compose)
+
+    //Retrofit2
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 }
