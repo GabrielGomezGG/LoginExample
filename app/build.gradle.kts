@@ -5,6 +5,15 @@ plugins {
     //Dagger Hilt
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
+
+    alias(libs.plugins.apollo)
+
+}
+
+apollo {
+    service("service") {
+        packageName.set("com.gg.loginexample")
+    }
 }
 
 android {
@@ -79,4 +88,6 @@ dependencies {
     //Retrofit2
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+
+    implementation(libs.apollo.runtime)
 }

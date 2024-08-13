@@ -1,8 +1,8 @@
 - Dagger Hilt !! ✔
 - Retrofit !! ✔
-- UiState !!
+- UiState !! ✔
 - Coroutines !! ✔
-- Use Cases !! 
+- Use Cases !! ✔ 
 - Navigation Component 
 - View Model !! ✔
 - Flow !! ✔
