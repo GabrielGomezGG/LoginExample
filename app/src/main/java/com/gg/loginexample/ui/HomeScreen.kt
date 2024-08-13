@@ -1,7 +1,9 @@
 package com.gg.loginexample.ui
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.runtime.Composable
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.ListItem
@@ -10,14 +12,21 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
+import androidx.compose.ui.unit.dp
 import com.gg.loginexample.domain.model.Post
 import com.gg.loginexample.fake.FakeModels
 import com.gg.loginexample.ui.theme.LoginExampleTheme
 
 @Composable
 fun HomeScreen(posts: List<Post>) {
-    LazyColumn {
-        items(posts) { post ->
+    LazyColumn(
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+        modifier = Modifier.fillMaxSize().padding(4.dp)
+    ) {
+        items(
+            posts,
+            key = { post -> post.idPost }
+        ) { post ->
             ListItem(
                 headlineContent = {
                     Text(text = post.title)
@@ -25,6 +34,8 @@ fun HomeScreen(posts: List<Post>) {
                 supportingContent = {
                     Text(text = post.body)
                 },
+                shadowElevation = 4.dp,
+                tonalElevation = 2.dp,
             )
         }
     }
