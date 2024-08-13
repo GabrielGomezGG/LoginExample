@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "LoginExample"
 include(":app")
+include(":di")

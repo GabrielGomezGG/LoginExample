@@ -1,0 +1,18 @@
+- Dagger Hilt !! ✔
+- Retrofit !! ✔
+- UiState !! ✔
+- Coroutines !! ✔
+- Use Cases !! ✔ 
+- Navigation Component 
+- View Model !! ✔
+- Flow !! ✔
+- Room?
+- Apollo GraphQL?
+- Repository Pattern !! ✔ 
+- Clean Architecture !! ✔
+- Compose !! ✔
+- Animaciones?
+- Testing!! (Mockk, JUnit)
+- CI/CD????????????
+- Firebase !!??
+- Modularization (?)
