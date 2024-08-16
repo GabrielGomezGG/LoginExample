@@ -99,4 +99,7 @@ dependencies {
 
     //mockk
     testImplementation (libs.mockk)
+
+    // Turbine
+    testImplementation(libs.turbine)
 }

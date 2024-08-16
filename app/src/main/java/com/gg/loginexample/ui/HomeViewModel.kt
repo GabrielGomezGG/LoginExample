@@ -24,10 +24,6 @@ class HomeViewModel @Inject constructor(
     private val _posts = MutableStateFlow<HomeUiState>(HomeUiState.Loading)
     val posts = _posts.asStateFlow()
 
-    init {
-        getPosts()
-    }
-
     fun getPosts() {
         viewModelScope.launch {
             try {
