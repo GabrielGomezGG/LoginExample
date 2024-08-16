@@ -6,15 +6,15 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
 
-    alias(libs.plugins.apollo)
+//    alias(libs.plugins.apollo)
 
 }
 
-apollo {
-    service("service") {
-        packageName.set("com.gg.loginexample")
-    }
-}
+//apollo {
+//    service("service") {
+//        packageName.set("com.gg.loginexample")
+//    }
+//}
 
 android {
     namespace = "com.gg.loginexample"
@@ -89,5 +89,11 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
 
-    implementation(libs.apollo.runtime)
+//    implementation(libs.apollo.runtime)
+
+    //Mock web Server
+    testImplementation(libs.mockwebserver)
+
+    //kotlin corrutines
+    testImplementation (libs.kotlinx.coroutines.test)
 }
