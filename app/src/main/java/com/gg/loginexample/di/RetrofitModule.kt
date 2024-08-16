@@ -3,7 +3,7 @@ package com.gg.loginexample.di
 import com.gg.loginexample.data.PostRepository
 import com.gg.loginexample.data.PostRepositoryImpl
 import com.gg.loginexample.data.network.PostService
-import com.gg.loginexample.domain.model.GetPostUseCase
+import com.gg.loginexample.domain.GetPostUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

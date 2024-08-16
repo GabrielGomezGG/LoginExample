@@ -52,7 +52,7 @@ private fun HomeScreenPreview() {
             color = MaterialTheme.colorScheme.background
         ) {
             HomeScreen(
-                posts = FakeModels.postFake
+                posts = FakeModels.fakePosts
             )
         }
     }

@@ -1,6 +1,7 @@
-package com.gg.loginexample.domain.model
+package com.gg.loginexample.domain
 
 import com.gg.loginexample.data.PostRepository
+import com.gg.loginexample.domain.model.Post
 import javax.inject.Inject
 
 class GetPostUseCase @Inject constructor(

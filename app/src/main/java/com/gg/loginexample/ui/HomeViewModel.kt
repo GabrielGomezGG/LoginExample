@@ -2,8 +2,7 @@ package com.gg.loginexample.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.gg.loginexample.data.PostRepository
-import com.gg.loginexample.domain.model.GetPostUseCase
+import com.gg.loginexample.domain.GetPostUseCase
 import com.gg.loginexample.domain.model.Post
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -4,6 +4,7 @@ import com.gg.loginexample.data.network.PostService
 import com.gg.loginexample.data.network.model.toPost
 import com.gg.loginexample.domain.model.Post
 import com.gg.loginexample.exception.PostNotFoundException
+import java.net.UnknownHostException
 import javax.inject.Inject
 
 interface PostRepository {
@@ -15,14 +16,19 @@ class PostRepositoryImpl @Inject constructor(
 ) : PostRepository {
 
     override suspend fun getPosts(): List<Post> {
-        val posts = postService.getPostsNetwork()
+        try {
+            val posts = postService.getPostsNetwork()
 
-        if(!posts.isSuccessful)
-            throw PostNotFoundException()
+            if(posts.code() == 404)
+                throw PostNotFoundException()
 
-        if(posts.isSuccessful)
-            return posts.body()?.map { it.toPost() } ?: emptyList()
+            if(posts.isSuccessful)
+                return posts.body()?.map { it.toPost() } ?: emptyList()
 
-        return emptyList()
+            return emptyList()
+        }catch (e: UnknownHostException){
+            throw e
+        }
+
     }
 }

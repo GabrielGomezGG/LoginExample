@@ -96,4 +96,7 @@ dependencies {
 
     //kotlin corrutines
     testImplementation (libs.kotlinx.coroutines.test)
+
+    //mockk
+    testImplementation (libs.mockk)
 }
