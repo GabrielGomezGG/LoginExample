@@ -7,4 +7,7 @@ plugins {
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.hilt) apply false
     alias(libs.plugins.android.library) apply false
+
+    // Kover plugin
+    id("org.jetbrains.kotlinx.kover") version "0.8.3" apply false
 }

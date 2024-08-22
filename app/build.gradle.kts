@@ -6,15 +6,8 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
 
-//    alias(libs.plugins.apollo)
-
+    id("org.jetbrains.kotlinx.kover")
 }
-
-//apollo {
-//    service("service") {
-//        packageName.set("com.gg.loginexample")
-//    }
-//}
 
 android {
     namespace = "com.gg.loginexample"
@@ -88,8 +81,6 @@ dependencies {
     //Retrofit2
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
-
-//    implementation(libs.apollo.runtime)
 
     //Mock web Server
     testImplementation(libs.mockwebserver)
