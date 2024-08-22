@@ -57,6 +57,7 @@ class MainActivity : ComponentActivity() {
                         is HomeUiState.Success -> {
 
                             val postItems = (posts as HomeUiState.Success).posts
+                            asdasd
 
                             HomeScreen(postItems)
                         }
