@@ -4,7 +4,7 @@ on:
   pull_request:
 
 jobs:
-  build:
+  test_coverage:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
