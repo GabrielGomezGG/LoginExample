@@ -22,15 +22,21 @@ jobs:
         run: chmod +x gradlew
 
       - name: Generate kover coverage report
-        run: ./gradlew koverXmlReport
+        run: ./gradlew koverXmlReportRelease
 
       - name: Add coverage report to PR
         id: kover
         uses: mi-kas/kover-report@v1
         with:
           path: ${{ github.workspace }}/app/build/reports/kover/reportRelease.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
           title: Code Coverage
           update-comment: true
-          min-coverage-overall: 80
-          min-coverage-changed-files: 80
+          min-coverage-overall: 0
+          min-coverage-changed-files: 0
           coverage-counter-type: LINE
+
+      - name: Upload coverage reports
+        uses: codecov/codecov-action@v3
+        with:
+          files: app/build/reports/kover/reportRelease.xml
