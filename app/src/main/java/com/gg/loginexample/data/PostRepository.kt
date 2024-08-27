@@ -1,5 +1,6 @@
 package com.gg.loginexample.data
 
+import android.util.Log
 import com.gg.loginexample.data.network.PostService
 import com.gg.loginexample.data.network.model.toPost
 import com.gg.loginexample.domain.model.Post
@@ -27,7 +28,7 @@ class PostRepositoryImpl @Inject constructor(
 
             return emptyList()
         }catch (e: UnknownHostException){
-            throw e
+            Log.i("titi", e.message.toString())
         }
 
     }

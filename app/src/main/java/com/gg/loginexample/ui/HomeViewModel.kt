@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gg.loginexample.domain.GetPostUseCase
 import com.gg.loginexample.domain.model.Post
+import com.gg.loginexample.exception.PostNotFoundException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -28,7 +29,7 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 _posts.value = HomeUiState.Success(getPostUseCase())
-            } catch (e: Exception) {
+            } catch (e: PostNotFoundException) {
                 _posts.value = HomeUiState.Error(e.message ?: "An error occurred")
             }
         }

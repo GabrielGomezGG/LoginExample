@@ -10,4 +10,6 @@ plugins {
 
     // Kover plugin
     id("org.jetbrains.kotlinx.kover") version "0.8.3" apply false
+
+    id("io.gitlab.arturbosch.detekt").version("1.23.6")
 }

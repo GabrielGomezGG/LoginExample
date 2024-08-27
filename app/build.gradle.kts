@@ -7,6 +7,8 @@ plugins {
     alias(libs.plugins.hilt)
 
     id("org.jetbrains.kotlinx.kover")
+
+    id("io.gitlab.arturbosch.detekt")
 }
 
 android {
