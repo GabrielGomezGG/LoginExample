@@ -20,12 +20,14 @@ class PostRepositoryImpl @Inject constructor(
         try {
             val posts = postService.getPostsNetwork()
 
-            if (posts.code() == 404)
+            if(posts.code() == 404)
                 throw PostNotFoundException()
 
-            return posts.body()?.map { it.toPost() } ?: emptyList()
+            if(posts.isSuccessful)
+                return posts.body()?.map { it.toPost() } ?: emptyList()
 
-        } catch (e: UnknownHostException) {
+            return emptyList()
+        }catch (e: UnknownHostException){
             Log.i("titi", e.message.toString())
             return emptyList()
         }
