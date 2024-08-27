@@ -29,6 +29,7 @@ class PostRepositoryImpl @Inject constructor(
             return emptyList()
         }catch (e: UnknownHostException){
             Log.i("titi", e.message.toString())
+            return emptyList()
         }
 
     }
