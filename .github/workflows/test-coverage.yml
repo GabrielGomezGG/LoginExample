@@ -1,0 +1,43 @@
+name: Measure coverage
+
+on:
+  pull_request:
+
+jobs:
+  test_coverage:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Generate kover coverage report
+        run: ./gradlew koverXmlReportRelease
+
+      - name: Add coverage report to PR
+        id: kover
+        uses: mi-kas/kover-report@v1
+        with:
+          path: ${{ github.workspace }}/app/build/reports/kover/reportRelease.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: Code Coverage
+          update-comment: true
+          min-coverage-overall: 50
+          min-coverage-changed-files: 70
+          coverage-counter-type: LINE
+
+      - name: Upload coverage reports
+        uses: codecov/codecov-action@v3
+        with:
+          files: app/build/reports/kover/reportRelease.xml

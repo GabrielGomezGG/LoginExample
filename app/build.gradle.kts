@@ -6,14 +6,9 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
 
-    alias(libs.plugins.apollo)
+    id("org.jetbrains.kotlinx.kover")
 
-}
-
-apollo {
-    service("service") {
-        packageName.set("com.gg.loginexample")
-    }
+    id("io.gitlab.arturbosch.detekt")
 }
 
 android {
@@ -89,5 +84,15 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
 
-    implementation(libs.apollo.runtime)
+    //Mock web Server
+    testImplementation(libs.mockwebserver)
+
+    //kotlin corrutines
+    testImplementation (libs.kotlinx.coroutines.test)
+
+    //mockk
+    testImplementation (libs.mockk)
+
+    // Turbine
+    testImplementation(libs.turbine)
 }
