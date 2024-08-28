@@ -12,6 +12,7 @@ interface PostRepository {
     suspend fun getPosts(): List<Post>
 }
 
+@Suppress("MagicNumber")
 class PostRepositoryImpl @Inject constructor(
     private val postService: PostService
 ) : PostRepository {
